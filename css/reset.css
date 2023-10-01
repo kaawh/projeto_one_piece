@@ -1,0 +1,12 @@
+* {
+    /* tirando os espaçamentos dos elementos: */
+    margin: 0;  
+    /* o padding é o esparçamento de dentro: */
+    padding: 0;
+    /* border-box serve ajuda a trabalhar com medidas no css:*/
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}

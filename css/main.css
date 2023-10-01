@@ -1,0 +1,128 @@
+body {
+    background-color: black;
+    /* tudo que estiver sobrando ele tira, exemplo a borda, ele vai esconder as rolagens: */
+    overflow: hidden;
+}
+
+/* pseudo elemento: criou um pseudo elemento depois da tag main*/
+main::after {
+    content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     min-height: 100vh;
+     width: 80vw;
+
+     background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+
+main .personagem {
+    display: none;
+    /* vh é uma unidade de medida de acordo com a altura do dispositivo do usuario: */
+    height: 100vh;
+}
+
+main .personagem.selecionado {
+    display: block;
+}
+
+main .personagem .imagem {
+    /* ocupa 100% do seu tamnho*/
+    width: 100%;
+    height: 100%;
+    /* para a imagem n ficar distorcida de acordo com a altura: mantem as dimenções corretas e cobre o elemento */
+    object-fit: cover;
+}
+
+.conteudo {
+
+    /* colocando em cima da imagem: */
+    position: absolute;
+    /* vai pra cima na posição do topo: */
+    top: 0;
+    /* afastando 120 px para a esquerda: */
+    left: 120px;
+    /* centralizando a imagem: */
+    display: flex;
+    /* column vai dispor os elementos em colunas: */
+    flex-direction: column;
+    /* vai alinhar o conteudo verticalmente: mas antes de usar precisa criar um espaço para ser centralizado:  */
+    justify-content: center;
+    /* criando o espaço: */
+    min-height: 100vh;
+    max-width: 380px;
+    /* quer q ele fique como prioridade e fique em cima: */
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+   
+    color: white;
+    font-size: 48px;
+    font-family: Secular One;
+    /* tamanho da fonte/ o peso da fonte:  */
+    font-weight: 400;
+    /* cria um espaçamento entre os elementos e o bottom quer dizer que é em baixo: */
+    margin-bottom: 20px;
+
+}
+
+.conteudo .descricao {
+    color: white;
+    font-family: "Rubik";
+    /* altura entre as linhas:  */
+    line-height: 24px;
+
+}
+
+.conteudo .logo {
+    /* como se fosse um papel de parede: */
+    background-image: url("../img/one-piece-logo.png");
+    /* vaiu cobrir a area desejada:  */
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* opacidade:  */
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+
+    /* alinha no centro */
+    align-items: center;
+    /* espaçamento usado junto com o display flex */
+    gap: 10px;
+
+}
+
+.botoes .botao {
+    border: none;
+    background: #000;
+    /* é um cursor, quando tem um item que é clicavel:  */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    /* deixando o botao redondo:  */
+    border-radius: 50%;
+
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    /* a sombra do elemento:  */
+    box-shadow: 0 0 10px #d9d9d9;
+
+}
